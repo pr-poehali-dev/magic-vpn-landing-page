@@ -49,7 +49,7 @@ const Index = () => {
         <nav className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Icon name="Sparkles" className="text-purple-400" size={32} />
-            <span className="text-2xl font-bold text-white">Magic VPN</span>
+            <span className="text-lg font-pixel text-white">Magic VPN</span>
           </div>
           <div className="flex space-x-4">
             <Button variant="ghost" className="text-white hover:text-purple-300">
@@ -75,19 +75,19 @@ const Index = () => {
             </div>
           </div>
           
-          <h1 className="text-6xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="text-4xl font-pixel text-white mb-6 animate-fade-in">
             Magic VPN
           </h1>
-          <p className="text-xl text-purple-200 mb-8 animate-fade-in">
+          <p className="text-sm font-pixel text-purple-200 mb-8 animate-fade-in">
             Превращаем интернет в магию. Один клик — и весь мир открыт.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-lg">
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-sm font-pixel">
               <Icon name="Download" className="mr-2" size={20} />
               Скачать магию
             </Button>
-            <Button variant="outline" className="border-purple-400 text-purple-300 hover:bg-purple-800 px-8 py-3 text-lg">
+            <Button variant="outline" className="border-purple-400 text-purple-300 hover:bg-purple-800 px-8 py-3 text-sm font-pixel">
               <Icon name="Play" className="mr-2" size={20} />
               Посмотреть демо
             </Button>
@@ -98,8 +98,8 @@ const Index = () => {
       {/* Features Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Почему это магия?</h2>
-          <p className="text-purple-200 text-lg">Простота использования встречается с мощными возможностями</p>
+          <h2 className="text-2xl font-pixel text-white mb-4">Почему это магия?</h2>
+          <p className="text-purple-200 text-xs font-pixel">Простота использования встречается с мощными возможностями</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -109,8 +109,8 @@ const Index = () => {
                 <div className="flex justify-center mb-4">
                   <Icon name={feature.icon as any} className="text-purple-400" size={48} />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-purple-200">{feature.description}</p>
+                <h3 className="text-sm font-pixel text-white mb-3">{feature.title}</h3>
+                <p className="text-xs font-pixel text-purple-200 leading-relaxed">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -121,17 +121,17 @@ const Index = () => {
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Кто мы и что делаем?</h2>
-            <p className="text-purple-200 text-lg">Ответы на главные вопросы о Magic VPN</p>
+            <h2 className="text-2xl font-pixel text-white mb-4">Кто мы и что делаем?</h2>
+            <p className="text-purple-200 text-xs font-pixel">Ответы на главные вопросы о Magic VPN</p>
           </div>
           
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-purple-600">
-                <AccordionTrigger className="text-white hover:text-purple-300 text-left">
+                <AccordionTrigger className="text-white hover:text-purple-300 text-left text-sm font-pixel">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-purple-200">
+                <AccordionContent className="text-purple-200 text-xs font-pixel leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -146,11 +146,11 @@ const Index = () => {
           <div className="flex justify-center mb-6">
             <Icon name="Sparkles" className="text-purple-400 animate-pulse" size={48} />
           </div>
-          <h2 className="text-4xl font-bold text-white mb-6">Готовы к магии?</h2>
-          <p className="text-purple-200 text-lg mb-8">
+          <h2 className="text-2xl font-pixel text-white mb-6">Готовы к магии?</h2>
+          <p className="text-purple-200 text-xs font-pixel mb-8 leading-relaxed">
             Присоединяйтесь к тысячам пользователей, которые уже открыли для себя магию свободного интернета
           </p>
-          <Button className="bg-purple-600 hover:bg-purple-700 text-white px-12 py-4 text-xl">
+          <Button className="bg-purple-600 hover:bg-purple-700 text-white px-12 py-4 text-sm font-pixel">
             <Icon name="Sparkles" className="mr-2" size={24} />
             Начать магию сейчас
           </Button>
@@ -163,7 +163,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Icon name="Sparkles" className="text-purple-400" size={24} />
-              <span className="text-white font-semibold">Magic VPN</span>
+              <span className="text-white font-pixel text-sm">Magic VPN</span>
             </div>
             <div className="flex space-x-6">
               <a href="#" className="text-purple-300 hover:text-white transition-colors">
@@ -178,7 +178,7 @@ const Index = () => {
             </div>
           </div>
           <div className="text-center mt-4 text-purple-400">
-            <p>© 2024 Magic VPN. Магия доступного интернета.</p>
+            <p className="font-pixel text-xs">© 2024 Magic VPN. Магия доступного интернета.</p>
           </div>
         </div>
       </footer>
