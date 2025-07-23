@@ -2,8 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
+import PixelProgress from "@/components/ui/pixel-progress";
+import { useState } from "react";
 
 const Index = () => {
+  const [showProgress, setShowProgress] = useState(false);
+  const [progressComplete, setProgressComplete] = useState(false);
   const features = [
     {
       icon: "Wand2",
@@ -82,16 +86,45 @@ const Index = () => {
             Превращаем интернет в магию. Один клик — и весь мир открыт.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-sm font-pixel">
-              <Icon name="Download" className="mr-2" size={20} />
-              Скачать магию
-            </Button>
-            <Button variant="outline" className="border-purple-400 text-purple-300 hover:bg-purple-800 px-8 py-3 text-sm font-pixel">
-              <Icon name="Play" className="mr-2" size={20} />
-              Посмотреть демо
-            </Button>
-          </div>
+          {!showProgress ? (
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
+              <Button 
+                onClick={() => setShowProgress(true)}
+                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 text-sm font-pixel"
+              >
+                <Icon name="Download" className="mr-2" size={20} />
+                Скачать магию
+              </Button>
+              <Button variant="outline" className="border-purple-400 text-purple-300 hover:bg-purple-800 px-8 py-3 text-sm font-pixel">
+                <Icon name="Play" className="mr-2" size={20} />
+                Посмотреть демо
+              </Button>
+            </div>
+          ) : (
+            <div className="mt-8">
+              <PixelProgress 
+                duration={4000}
+                onComplete={() => setProgressComplete(true)}
+              />
+              {progressComplete && (
+                <div className="mt-6 animate-fade-in">
+                  <p className="font-pixel text-xs text-green-400 mb-4">
+                    ✨ Магия активирована! ✨
+                  </p>
+                  <Button 
+                    onClick={() => {
+                      setShowProgress(false);
+                      setProgressComplete(false);
+                    }}
+                    className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-sm font-pixel"
+                  >
+                    <Icon name="CheckCircle" className="mr-2" size={20} />
+                    Перезапустить
+                  </Button>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
